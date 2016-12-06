@@ -19,7 +19,7 @@ const
   request = require('request');
 
 var app = express();
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8080);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
@@ -72,6 +72,11 @@ app.get('/webhook', function(req, res) {
   }  
 });
 
+
+app.get('/alive', function(req, res) {
+    console.log('incoming alive checking request');
+    res.status(200).send("I'm alive");
+}); 
 
 /*
  * All callbacks for Messenger are POST-ed. They will be sent to the same

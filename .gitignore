@@ -1,6 +1,7 @@
-logs
-*.log
-pids
-node_modules
+/node-server/logs
+/node-server/*.log
+/node-server/pids
+/node-server/node_modules
+/node-server/config/*
 .npm
 *.dat
