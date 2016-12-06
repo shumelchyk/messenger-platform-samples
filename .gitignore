@@ -3,5 +3,6 @@
 /node-server/pids
 /node-server/node_modules
 /node-server/config/*
+/config/*
 .npm
 *.dat
