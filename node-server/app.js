@@ -446,16 +446,16 @@ var question = [
     "Thanks! Are you a male or female?", //2
     "What is your date of birth?", //3
     "Thank you, are you married?", //4
-    "Do you have children, if yes, then how many and how old?", //5
+    "Do you have children, if yes, then how many", //5
     "Ok, do you have any other dependents?", //6
     "Do you smoke?", //7
     "Ok, do you have any chronic disease?", //8
-    "Thanks, do you have a history any medical treatment for the last 10 years?", //9
+    "Thanks, do you have a history of any medical treatment for the last 10 years?", //9
     "Ok, what is your primary occupation?", //10
     "Thanks, what is your average annual income?", //11
     "Ok, do you have any active mortgage?", //12
     "Thanks, let me select which products match best to your profile… You will be notified through our mobile application.", //13
-    "Please install our mobile application for further steps." //14
+    "Please use our mobile application for further steps." //14
 ]
 
 function getMessageText(questionId) {
