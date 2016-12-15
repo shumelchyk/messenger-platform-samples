@@ -451,7 +451,7 @@ function sendTextMessage(recipientId, messageText) {
                         template_type: "button",
                         text: "Please use our mobile application for further steps.",
                         buttons: [{
-                            type: "account_link",
+                            type: "al_applink_data",
                             url: "assurance://app",
                             title: "Open application"
                         }, {
