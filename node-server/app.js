@@ -427,19 +427,19 @@ function sendTextMessage(recipientId, messageText) {
         questionId = 0;
     }
 
-    if (questionId < 14) {
-        var messageData = {
-            recipient: {
-                id: recipientId
-            },
-            message: {
-                text: getMessageText(questionId),
-                metadata: "DEVELOPER_DEFINED_METADATA"
-            }
-        };
+    // if (questionId < 14) {
+    //     var messageData = {
+    //         recipient: {
+    //             id: recipientId
+    //         },
+    //         message: {
+    //             text: getMessageText(questionId),
+    //             metadata: "DEVELOPER_DEFINED_METADATA"
+    //         }
+    //     };
 
-        dict[recipientId] = questionId + 1;
-    } else {
+    //     dict[recipientId] = questionId + 1;
+    //} else {
         var messageData = {
             recipient: {
                 id: recipientId
@@ -451,7 +451,7 @@ function sendTextMessage(recipientId, messageText) {
                         template_type: "button",
                         text: "Please use our mobile application for further steps.",
                         buttons: [{
-                            type: "web_url",
+                            type: "account_link",
                             url: "assurance://app",
                             title: "Open application"
                         }, {
@@ -464,7 +464,7 @@ function sendTextMessage(recipientId, messageText) {
             }
         };
 
-    }
+    //}
 
     callSendAPI(messageData);
 }
