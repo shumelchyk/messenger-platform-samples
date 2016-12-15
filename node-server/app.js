@@ -423,18 +423,48 @@ function sendTextMessage(recipientId, messageText) {
     if (questionId > 14) {
         questionId = 14;
     }
+    if (messageText.includes("hello") || messageText.includes("Hello")) {
+        questionId = 0;
+    }
 
-    var messageData = {
-        recipient: {
-            id: recipientId
-        },
-        message: {
-            text: getMessageText(questionId),
-            metadata: "DEVELOPER_DEFINED_METADATA"
-        }
-    };
+    if (questionId < 14) {
+        var messageData = {
+            recipient: {
+                id: recipientId
+            },
+            message: {
+                text: getMessageText(questionId),
+                metadata: "DEVELOPER_DEFINED_METADATA"
+            }
+        };
 
-    dict[recipientId] = questionId + 1;
+        dict[recipientId] = questionId + 1;
+    } else {
+        var messageData = {
+            recipient: {
+                id: recipientId
+            },
+            message: {
+                attachment: {
+                    type: "template",
+                    payload: {
+                        template_type: "button",
+                        text: "Please use our mobile application for further steps.",
+                        buttons: [{
+                            type: "web_url",
+                            url: "assurance://app",
+                            title: "Open application"
+                        }, {
+                            type: "web_url",
+                            url: "http://assuranceapp.com/",
+                            title: "Open website"
+                        }]
+                    }
+                }
+            }
+        };
+
+    }
 
     callSendAPI(messageData);
 }
